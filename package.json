@@ -1,0 +1,31 @@
+{
+  "name": "japan-reentry-check",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Free checker for the date a foreign resident must be back in Japan: deemed re-entry permit (みなし再入国, 1 year / SPR 2 years / capped by residence-card expiry), regular re-entry permit, and the 2-month special period while a visa renewal or change is pending. Keyless JSON API + MCP.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "node --import tsx --test lib/reentry.test.ts lib/api.test.ts lib/share.test.ts"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "next": "^16.3.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.3.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

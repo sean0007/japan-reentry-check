@@ -1,0 +1,52 @@
+# Japan Re-entry Deadline Check
+
+> Free, unofficial checker for the last day a foreign resident who leaves Japan must be back so their status of residence does not lapse. Covers the deemed re-entry permit (みなし再入国許可, Immigration Control Act art. 26-2), regular re-entry permits (art. 26), the 2-month special period while an extension or change of status is pending (art. 20(6)), special permanent residents (2 years) and statuses that get no deemed re-entry. Dates counted under the Civil Code (art. 140-143). Rules as of 2026-10-24. Educational, not legal advice; not affiliated with the Immigration Services Agency of Japan (ISA).
+
+Site: https://japan-reentry-check.vercel.app
+
+## Key facts (official sources below)
+- Deemed re-entry: residents with a valid passport (and residence card) who tick the box on the re-entry ED card at departure. Return within 1 year of departure, or by the period-of-stay expiry if earlier. Special permanent residents: 2 years.
+- Deemed re-entry CANNOT be extended abroad (art. 26-2(3)). Miss it and the status of residence (including permanent residence) ends.
+- Not available to: temporary visitors (短期滞在), periods of stay of 3 months or less, Designated Activities for pending refugee applicants, people in revocation/deportation procedures, persons designated by the Minister.
+- Renewal or change pending past expiry (special period, art. 20(6)): may stay until the decision or 2 months after the old expiry, whichever first. Leaving on deemed re-entry: return by the earlier of 1 year from departure or expiry + 2 months, and receive the decision at the immigration office before the 2 months end (ISA Q&A).
+- Regular re-entry permit: up to 5 years (SPR 6) within the period of stay; single ¥4,000 / multiple ¥7,000 at the counter (online ¥3,500 / ¥6,500). Can be extended at a Japanese embassy by up to 1 year, max 6 years from when it took effect (art. 26(5)).
+- Date counting: departure day not counted. Leave 2026-10-24 → back by 2027-10-24. Expiry 2026-12-30 + 2 months → 2027-02-28.
+
+## API (free, no key, CORS open)
+
+### GET
+GET https://japan-reentry-check.vercel.app/api/check?status=mid_long&departureDate=2026-12-20&periodExpiry=2027-01-15&pending=renewal&returnDate=2027-02-10
+→ verdict "in_time", returnBy "2027-03-15", returnByBasis, daysAllowedFromDeparture, marginDays 33, specialPeriod {endsOn, mustReceiveDecisionBy, note}, canExtendAbroad false, steps[], warnings[], sources, disclaimer
+
+### POST
+POST https://japan-reentry-check.vercel.app/api/check
+{"status":"permanent","departureDate":"2026-12-25","returnDate":"2028-01-05"}
+→ verdict "too_late", returnBy "2027-12-25"
+
+Parameters: status (mid_long | permanent | spr | short_term | three_months_or_less | refugee_applicant; aliases pr, student, work, tourist…), departureDate, periodExpiry (residence card 在留期限; required for mid_long), pending (none | renewal | change), permit (deemed | single | multiple), permitExpiry (for regular permits), returnDate (optional), today (optional).
+
+### Other endpoints
+- GET https://japan-reentry-check.vercel.app/api/rules
+- https://japan-reentry-check.vercel.app/openapi.json
+- https://japan-reentry-check.vercel.app/.well-known/ai-plugin.json
+- MCP: tool japan_reentry_deadline_check on https://free-agent-tools.vercel.app/mcp
+
+## Sources (official)
+- https://www.moj.go.jp/isa/immigration/procedures/minashisainyukoku_00001.html (ISA: deemed re-entry permit)
+- https://www.moj.go.jp/isa/immigration/procedures/16-5.html (ISA: re-entry permit, fees)
+- https://www.moj.go.jp/isa/immigration/faq/kanri_qa.html (ISA Q&A on re-entry while an application is pending)
+- https://www.moj.go.jp/isa/applications/procedures/tokureikikan_00001.html (ISA: special period)
+- https://laws.e-gov.go.jp/law/326CO0000000319 (Immigration Control Act, e-Gov)
+
+## Disclaimer
+Educational date calculator, not legal advice, not affiliated with ISA. It cannot see your actual permit or a pending decision. Missing the deadline ends your status. Leave a margin and confirm with ISA (0570-013904) or a licensed gyoseishoshi / lawyer before you travel.
+
+## Other free tools by the same maker
+- Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
+- Japan PR Guideline Check: https://japan-pr-check.vercel.app
+- Japan Tax-Free Refund Checker: https://japan-tax-free-refund.vercel.app
+- Japan Customs Allowance Checker: https://japan-customs-allowance.vercel.app
+- Japan International Postage 2027: https://japan-intl-postage.vercel.app
+- Japan Luggage Check: https://japan-luggage.vercel.app
+- Japan Alert Decoder: https://japan-alert-decoder.vercel.app
+- Free Agent Tools MCP: https://free-agent-tools.vercel.app
