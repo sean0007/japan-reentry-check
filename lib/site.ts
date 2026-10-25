@@ -11,6 +11,7 @@ export const HONESTY =
 export const SIBLING_TOOLS = [
   { href: "https://japan-visa-fee.vercel.app", label: "Japan Visa Fee Calculator" },
   { href: "https://japan-pr-check.vercel.app", label: "Japan PR Guideline Check" },
+  { href: "https://japan-overseas-dependents.vercel.app", label: "Japan Overseas Dependents Check" },
   { href: "https://japan-tax-free-refund.vercel.app", label: "Japan Tax-Free Refund" },
   { href: "https://japan-customs-allowance.vercel.app", label: "Japan Customs Allowance" },
   { href: "https://japan-intl-postage.vercel.app", label: "Japan International Postage 2027" },

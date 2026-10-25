@@ -44,6 +44,7 @@ Educational date calculator, not legal advice, not affiliated with ISA. It canno
 ## Other free tools by the same maker
 - Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
 - Japan PR Guideline Check: https://japan-pr-check.vercel.app
+- Japan Overseas Dependents Check (claim a relative living outside Japan as a dependent / 国外居住親族: age 16-29, 30-69 and 70+ rules, ¥380,000 remittance test, 2026 ¥620,000 income limit, deduction and tax saving; keyless API): https://japan-overseas-dependents.vercel.app
 - Japan Tax-Free Refund Checker: https://japan-tax-free-refund.vercel.app
 - Japan Customs Allowance Checker: https://japan-customs-allowance.vercel.app
 - Japan International Postage 2027: https://japan-intl-postage.vercel.app
