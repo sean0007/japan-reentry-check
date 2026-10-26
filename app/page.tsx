@@ -84,7 +84,7 @@ export default function HomePage() {
         <p className="font-mono text-[11px] tracking-[0.28em] text-amber uppercase">Free · Japan · みなし再入国 · 再入国許可</p>
         <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight sm:text-6xl">When do I have to be back in Japan?</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
-          Going home for New Year or a long trip on a work, student, spouse or permanent resident visa? Your deemed re-entry permit lasts 1 year from the day you leave, but only until your residence card expires if that comes first, and it cannot be extended from abroad. If your renewal is still pending, you have until 2 months after your old expiry date, and you must pick up the decision in Japan by then. Enter your dates to get the exact last day.
+          Going home for New Year or a long trip on a work, student, spouse or permanent resident visa? Your deemed re-entry permit lasts 1 year from the day you leave, but only until your residence card expires if that comes first, and it cannot be extended from abroad. If your renewal is still pending, you have until 2 months after your old expiry date, and you must pick up the decision in Japan by then. This free re-entry deadline calculator (checker) takes your dates and gives the exact last day.
         </p>
         <p className="mt-3 text-sm text-muted">
           Examples:{" "}
