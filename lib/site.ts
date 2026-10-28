@@ -13,6 +13,7 @@ export const SIBLING_TOOLS = [
   { href: "https://japan-pr-check.vercel.app", label: "Japan PR Guideline Check" },
   { href: "https://japan-overseas-dependents.vercel.app", label: "Japan Overseas Dependents Check" },
   { href: "https://japan-parttime-check.vercel.app", label: "Japan Part-time Work Check" },
+  { href: "https://japan-driving-check.vercel.app", label: "Japan Driving Check" },
   { href: "https://japan-tax-free-refund.vercel.app", label: "Japan Tax-Free Refund" },
   { href: "https://japan-customs-allowance.vercel.app", label: "Japan Customs Allowance" },
   { href: "https://japan-intl-postage.vercel.app", label: "Japan International Postage 2027" },
